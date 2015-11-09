@@ -130,7 +130,7 @@ module Helpers
       when 'ubuntu'
         bash "add an apt's trusted key for mesosphere" do
           code <<-EOH
-            apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF
+            sudo gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xdf7d54cbe56151bf
           EOH
           action :run
         end
